@@ -1,4 +1,4 @@
-package com.kabayan.price_checker
+package com.kabayan.price
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
 

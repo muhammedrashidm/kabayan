@@ -27,17 +27,18 @@ class MainActivity: FlutterActivity() {
 
     private fun configureScanner() {
         val intent = Intent("nlscan.action.SCANNER_TRIG")
+        intent.putExtra("SCAN_TIMEOUT", 9)
         sendBroadcast(intent)
 
 
         var receiver = ScannerReceiver()
         val filter = IntentFilter()
-        filter.addAction("nlscan.action.SCANNER_TRIG")
+        filter.addAction("nlscan.action.SCANNER_RESULT")
         registerReceiver(receiver, filter)
     }
     private  fun  testData(){
         val intent = Intent()
-        intent.action = "nlscan.action.SCANNER_TRIG"
+        intent.action = "nlscan.action.SCANNER_RESULT"
         intent.putExtra("message", getRandomString(5))
         sendBroadcast(intent)
     }
